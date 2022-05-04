@@ -199,7 +199,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                     <label>
                   <br /> <br />
                         <strong>Удалить данные пользователя с Id:</strong>
-                  <input name="id"
+                  <input name="id2"
                          value="" /></label><br />
                 <input type="submit" value="Удалить" />
           </form>
