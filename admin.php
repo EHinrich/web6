@@ -46,11 +46,11 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
       $values['bio'] = $row["biography"];
       $values['check'] = $row["checkbox"];
       }
-
     }
       catch(PDOException $e){
         print('Error : ' . $e->getMessage());
         exit();
+      }
     
 
 
