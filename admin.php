@@ -98,7 +98,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                 <form action=""  method="POST">
                     
                     <label>
-                  Имя:<br />
+                  Id:
                   <input name="id"
                          value="" />
               </label><br />
@@ -112,7 +112,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                <label>
                   email:<br />
                   <input name="email"
-                         value="<"
+                         value=""
                          type="email" />
               </label><br />
       
@@ -182,8 +182,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
       
               <label>
                   Биография:<br />
-                  <textarea name="bio">
-                  <?php print $values['bio']; ?></textarea> 
+                  <textarea name="bio"></textarea> 
               </label><br />
       
       
