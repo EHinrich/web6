@@ -220,7 +220,7 @@ try {
       $checkbox = $_POST['check'];
 
     $stmt->execute();
-    header('Location: ./');
+    header('Location: admin.php');
   }
     catch(PDOException $e){
       print('Error : ' . $e->getMessage());
