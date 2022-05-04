@@ -249,5 +249,6 @@ if (!empty($_POST['id'])){
         $stmt->execute();
         }
 header('Location: admin.php');
+}
         
 ?>
