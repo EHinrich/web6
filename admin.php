@@ -29,30 +29,7 @@ $values = array();
 
 $user = 'u41181';
 $password = '2342349';
-$db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
-
-  try {
-
-    $stmt = $db->prepare("SELECT * FROM form2");
-    $stmt->execute();
-    foreach ($stmt as $row) {
-      $values['name']=$row["name"];
-      $values['email'] = $row["email"];
-      $values['year'] = $row["year"];
-      $values['radio-group-1'] = $row["sex"];
-      $values['radio-group-2'] = $row["number_of_limbs"];
-      $values['super'] = $row["superpowers"];
-      $values['bio'] = $row["biography"];
-      $values['check'] = $row["checkbox"];
-      }
-    }
-      catch(PDOException $e){
-        print('Error : ' . $e->getMessage());
-        exit();
-      }
-    
-
-
+$db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));    
 ?>
 
 <div id="content">
@@ -71,31 +48,46 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                             <th>Логин</th>
                             <th>Хеш пароля</th>
                         </tr>
-                        <tr>
-                            <td><?php print $values['name'] ?></td>
-                            <td>Ячейка 12</td>
-                            <td>Ячейка 13</td>
-                        </tr>
-                        <tr class="color2">
-                            <td>Ячейка 21</td>
-                            <td>Ячейка 22</td>
-                            <td>Ячейка 23</td>
-                        </tr>
-                        <tr>
-                            <td>Ячейка 31</td>
-                            <td>Ячейка 32</td>
-                            <td>Ячейка 33</td>
-                        </tr>
-                        <tr class="color2">
-                            <td>Ячейка 41</td>
-                            <td>Ячейка 42</td>
-                            <td>Ячейка 43</td>
-                        </tr>
-                        <tr>
-                            <td>Ячейка 51</td>
-                            <td>Ячейка 52</td>
-                            <td>Ячейка 53</td>
-                        </tr>
+                        <?php
+
+                          try {
+
+                            $stmt = $db->prepare("SELECT * FROM form2");
+                            $stmt->execute();
+                            foreach ($stmt as $row) {
+                              $values['name']=$row["name"];
+                              $values['email'] = $row["email"];
+                              $values['year'] = $row["year"];
+                              $values['radio-group-1'] = $row["sex"];
+                              $values['radio-group-2'] = $row["number_of_limbs"];
+                              $values['super'] = $row["superpowers"];
+                              $values['bio'] = $row["biography"];
+                              $values['check'] = $row["checkbox"];
+                              $values['login'] = $row["login"];
+                              $values['pass'] = $row["passwordmd"];
+                                ?>
+                                <tr>
+                                    <td><?php print $values['name'] ?></td>
+                                    <td><?php print $values['email'] ?></td>
+                                    <td><?php print $values['year'] ?></td>
+                                    <td><?php print $values['sex'] ?></td>
+                                    <td><?php print $values['number_of_limbs'] ?></td>
+                                    <td><?php print $values['superpowers'] ?></td>
+                                    <td><?php print $values['biography'] ?></td>
+                                    <td><?php print $values['checkbox'] ?></td>
+                                    <td><?php print $values['login'] ?></td>
+                                    <td><?php print $values['pass'] ?></td>
+                                </tr>
+                                <?php
+                        
+                              }
+                            }
+                              catch(PDOException $e){
+                                print('Error : ' . $e->getMessage());
+                                exit();
+                              }
+                        ?>
+                        
                     </table>
                 </section>
             </div>
