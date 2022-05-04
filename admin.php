@@ -94,11 +94,11 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                     </table>
                 </section>
             </div>
-              <h2>Изменить данные пользователя с Id:</h2>
                 <form action=""  method="POST">
-                  Id:
+                    <label>
+                  <h2>Изменить данные пользователя с Id</h2>:
                   <input name="id"
-                         value="" /><br />
+                         value="" /></label><br />
                     
               <label>
                   Имя:<br />
