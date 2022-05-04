@@ -124,14 +124,14 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
               Пол:<br />
               <label>
                   <input type="radio" 
-                         name="radio-group-1"
+                         name="sex"
                          value="male"
                           />
                   Муж
               </label>
               <label>
                   <input type="radio" 
-                         name="radio-group-1" 
+                         name="sex" 
                          value="female" 
                          />
                   Жен
@@ -140,28 +140,28 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
               Количество конечностей:<br />
               <label>
                   <input type="radio" 
-                         name="radio-group-2" 
+                         name="number_of_limbs" 
                          value="1" 
                          />
                   1
               </label>
               <label>
                   <input type="radio"
-                         name="radio-group-2"
+                         name="number_of_limbs"
                          value="2" 
                           />
                   2
               </label>
               <label>
                   <input type="radio"
-                         name="radio-group-2" 
+                         name="number_of_limbs" 
                          value="3"
                          />
                   3
               </label>
               <label>
                   <input type="radio"
-                         name="radio-group-2"  
+                         name="number_of_limbs"  
                          value="4" 
                           />
                   4
@@ -170,7 +170,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
               <label>
                   Сверхспособности:
                   <br />
-                  <select name="super"
+                  <select name="superpowers"
                       multiple="multiple">
                       <option value="Immortality" >Бессмертие</option>
                       <option value="Passing through walls" >Прохождение сквозь стены</option>
@@ -180,14 +180,14 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
       
               <label>
                   Биография:<br />
-                  <textarea name="bio"></textarea> 
+                  <textarea name="biography"></textarea> 
               </label><br />
       
       
               Чекбокс:<br />
               <label>
                   <input type="checkbox"
-                         name="check" value="Yes"
+                         name="checkbox" value="Yes"
                          />
                   С контрактом ознакомлен
               </label><br />
