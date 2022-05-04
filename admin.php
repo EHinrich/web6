@@ -210,37 +210,45 @@ else{
 $user = 'u41181';
 $password = '2342349';
 $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true)); 
-$id = $_POST['id'];
-try {
-    $stmt = $db->prepare("UPDATE form2 SET name=:name, email=:email, year=:year, sex=:sex, number_of_limbs=:number_of_limbs, superpowers=:superpowers, biography=:biography, checkbox=:checkbox WHERE id = '$id'");
+if (!empty($_POST['id']){
+    $id = $_POST['id'];
+    try {
+        $stmt = $db->prepare("UPDATE form2 SET name=:name, email=:email, year=:year, sex=:sex, number_of_limbs=:number_of_limbs, superpowers=:superpowers, biography=:biography, checkbox=:checkbox WHERE id = '$id'");
 
-    $stmt -> bindParam(':name', $name);
-    $stmt -> bindParam(':email', $email);
-    $stmt -> bindParam(':year', $year);
-    $stmt -> bindParam(':sex', $sex);
-    $stmt -> bindParam(':number_of_limbs', $number_of_limbs);
-    $stmt -> bindParam(':superpowers', $superpowers);
-    $stmt -> bindParam(':biography', $biography);
-    $stmt -> bindParam(':checkbox', $checkbox);
-    
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $year = $_POST['year'];
-    $sex = $_POST['sex'];
-    $number_of_limbs = $_POST['number_of_limbs'];
-    $superpowers = $_POST['superpowers'];
-    $biography = $_POST['biography'];
-    if (empty($_POST['checkbox']))
-      $checkbox = "No";
-    else
-      $checkbox = $_POST['checkbox'];
+        $stmt -> bindParam(':name', $name);
+        $stmt -> bindParam(':email', $email);
+        $stmt -> bindParam(':year', $year);
+        $stmt -> bindParam(':sex', $sex);
+        $stmt -> bindParam(':number_of_limbs', $number_of_limbs);
+        $stmt -> bindParam(':superpowers', $superpowers);
+        $stmt -> bindParam(':biography', $biography);
+        $stmt -> bindParam(':checkbox', $checkbox);
 
-    $stmt->execute();
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $year = $_POST['year'];
+        $sex = $_POST['sex'];
+        $number_of_limbs = $_POST['number_of_limbs'];
+        $superpowers = $_POST['superpowers'];
+        $biography = $_POST['biography'];
+        if (empty($_POST['checkbox']))
+          $checkbox = "No";
+        else
+          $checkbox = $_POST['checkbox'];
+
+        $stmt->execute();
+      }
+        catch(PDOException $e){
+          print('Error : ' . $e->getMessage());
+          exit();
+      }
+    header('Location: admin.php');
+    }
   }
-    catch(PDOException $e){
-      print('Error : ' . $e->getMessage());
-      exit();
-  }
-header('Location: admin.php');
-}
+    else{
+        $id = $_POST['id2'];
+        $stmt = $db->prepare("DELETE FROM form2 WHERE id = '$id'");
+        $stmt->execute();
+        }
+        
 ?>
