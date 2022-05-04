@@ -72,7 +72,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                             <th>Хеш пароля</th>
                         </tr>
                         <tr>
-                            <td><?php $values['name'] ?></td>
+                            <td><?php print $values['name'] ?></td>
                             <td>Ячейка 12</td>
                             <td>Ячейка 13</td>
                         </tr>
