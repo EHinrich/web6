@@ -32,7 +32,6 @@ $password = '2342349';
 $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
 
   try {
-    $login = $_SESSION['login'];
 
     $stmt = $db->prepare("SELECT * FROM form2");
     $stmt->execute();
@@ -73,7 +72,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                             <th>Хеш пароля</th>
                         </tr>
                         <tr>
-                            <td>$values['name']</td>
+                            <td><?php $values['name'] ?></td>
                             <td>Ячейка 12</td>
                             <td>Ячейка 13</td>
                         </tr>
