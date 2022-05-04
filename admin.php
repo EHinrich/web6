@@ -1,5 +1,5 @@
 <?php
-
+if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 /**
  * Задача 6. Реализовать вход администратора с использованием
  * HTTP-авторизации для просмотра и удаления результатов.
@@ -195,6 +195,8 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
               <input type="submit" value="Изменить" />
           </form>
 <?php
+}
+else{
 $user = 'u41181';
 $password = '2342349';
 $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true)); 
@@ -230,4 +232,5 @@ try {
       exit();
   }
 header('Location: admin.php');
+}
 ?>
