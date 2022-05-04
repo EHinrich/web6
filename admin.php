@@ -23,7 +23,38 @@ print('Вы успешно авторизовались и видите защи
 // *********
 // Здесь нужно прочитать отправленные ранее пользователями данные и вывести в таблицу.
 // Реализовать просмотр и удаление всех данных.
-// ********* ?>
+// *********
+
+$values = array();
+
+$user = 'u41181';
+$password = '2342349';
+$db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
+
+  try {
+    $login = $_SESSION['login'];
+
+    $stmt = $db->prepare("SELECT * FROM form2");
+    $stmt->execute();
+    foreach ($stmt as $row) {
+      $values['name']=$row["name"];
+      $values['email'] = $row["email"];
+      $values['year'] = $row["year"];
+      $values['radio-group-1'] = $row["sex"];
+      $values['radio-group-2'] = $row["number_of_limbs"];
+      $values['super'] = $row["superpowers"];
+      $values['bio'] = $row["biography"];
+      $values['check'] = $row["checkbox"];
+      }
+
+    }
+      catch(PDOException $e){
+        print('Error : ' . $e->getMessage());
+        exit();
+    
+
+
+?>
 
 <div id="content">
                 <section id="table">
@@ -42,7 +73,7 @@ print('Вы успешно авторизовались и видите защи
                             <th>Хеш пароля</th>
                         </tr>
                         <tr>
-                            <td>Ячейка 11</td>
+                            <td>$values['name']</td>
                             <td>Ячейка 12</td>
                             <td>Ячейка 13</td>
                         </tr>
