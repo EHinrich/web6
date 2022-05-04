@@ -116,7 +116,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
       
               <select id="year" name="year">
                 <?php for ($year = 1920; $year <= 2022; $year++) { ?>
-                <option <?php if ($year == $values['year']) {print('selected="selected"');} ?> value="<?php print($year); ?>"><?php print($year); ?></option>
+                <option value="<?php print($year); ?>"><?php print($year); ?></option>
                 <?php } ?>
               </select> <br />
 
@@ -192,6 +192,5 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                   С контрактом ознакомлен
               </label><br />
       
-              Отправить данные:
               <input type="submit" value="Изменить" />
           </form>
