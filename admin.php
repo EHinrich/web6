@@ -94,18 +94,25 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                     </table>
                 </section>
             </div>
-              <h2>Изменить данные</h2>
+              <h2>Изменить данные пользователя с Id:</h2>
                 <form action=""  method="POST">
+                    
+                    <label>
+                  Имя:<br />
+                  <input name="id"
+                         value="" />
+              </label><br />
+                    
               <label>
                   Имя:<br />
                   <input name="name"
-                         value="<?php print $values['name']; ?>" />
+                         value="" />
               </label><br />
       
                <label>
                   email:<br />
                   <input name="email"
-                         value="<?php print $values['email']; ?>"
+                         value="<"
                          type="email" />
               </label><br />
       
