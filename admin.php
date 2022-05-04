@@ -37,6 +37,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                     <h2 class="font-weight-bold">Таблица с данными пользователей</h2>
                     <table border="1px">
                         <tr class="color1">
+                            <th>Id</th>
                             <th>Имя</th>
                             <th>Email</th>
                             <th>Год</th>
@@ -55,6 +56,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                             $stmt = $db->prepare("SELECT * FROM form2");
                             $stmt->execute();
                             foreach ($stmt as $row) {
+                              $values['id']=$row["id"];
                               $values['name']=$row["name"];
                               $values['email'] = $row["email"];
                               $values['year'] = $row["year"];
@@ -67,6 +69,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                               $values['pass'] = $row["passwordmd"];
                                 ?>
                                 <tr>
+                                    <td><?php print $values['id'] ?></td>
                                     <td><?php print $values['name'] ?></td>
                                     <td><?php print $values['email'] ?></td>
                                     <td><?php print $values['year'] ?></td>
