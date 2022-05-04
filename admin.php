@@ -94,3 +94,100 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                     </table>
                 </section>
             </div>
+              <h2>Изменить данные/h2>
+                <form action=""  method="POST">
+              <label>
+                  Имя:<br />
+                  <input name="name"
+                         value="<?php print $values['name']; ?>" />
+              </label><br />
+      
+               <label>
+                  email:<br />
+                  <input name="email"
+                         value="<?php print $values['email']; ?>"
+                         type="email" />
+              </label><br />
+      
+              <select id="year" name="year">
+                <?php for ($year = 1920; $year <= 2022; $year++) { ?>
+                <option <?php if ($year == $values['year']) {print('selected="selected"');} ?> value="<?php print($year); ?>"><?php print($year); ?></option>
+                <?php } ?>
+              </select> <br />
+
+      
+              Пол:<br />
+              <label>
+                  <input type="radio" 
+                         name="radio-group-1"
+                         value="male"
+                          />
+                  Муж
+              </label>
+              <label>
+                  <input type="radio" 
+                         name="radio-group-1" 
+                         value="female" 
+                         />
+                  Жен
+              </label><br />
+      
+              Количество конечностей:<br />
+              <label>
+                  <input type="radio" 
+                         name="radio-group-2" 
+                         value="1" 
+                         />
+                  1
+              </label>
+              <label>
+                  <input type="radio"
+                         name="radio-group-2"
+                         value="2" 
+                          />
+                  2
+              </label>
+              <label>
+                  <input type="radio"
+                         name="radio-group-2" 
+                         value="3"
+                         />
+                  3
+              </label>
+              <label>
+                  <input type="radio"
+                         name="radio-group-2"  
+                         value="4" 
+                          />
+                  4
+              </label><br />
+      
+              <label>
+                  Сверхспособности:
+                  <br />
+                  <select name="super"
+                      multiple="multiple">
+                      <option value="Immortality" >Бессмертие</option>
+                      <option value="Passing through walls" >Прохождение сквозь стены</option>
+                      <option value="Levitation" >Левитация</option>
+                  </select>
+              </label><br />
+      
+              <label>
+                  Биография:<br />
+                  <textarea name="bio">
+                  <?php print $values['bio']; ?></textarea> 
+              </label><br />
+      
+      
+              Чекбокс:<br />
+              <label>
+                  <input type="checkbox"
+                         name="check" value="Yes"
+                         />
+                  С контрактом ознакомлен
+              </label><br />
+      
+              Отправить данные:
+              <input type="submit" value="Отправить" />
+          </form>
