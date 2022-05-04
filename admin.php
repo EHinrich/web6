@@ -58,11 +58,11 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                               $values['name']=$row["name"];
                               $values['email'] = $row["email"];
                               $values['year'] = $row["year"];
-                              $values['radio-group-1'] = $row["sex"];
-                              $values['radio-group-2'] = $row["number_of_limbs"];
-                              $values['super'] = $row["superpowers"];
-                              $values['bio'] = $row["biography"];
-                              $values['check'] = $row["checkbox"];
+                              $values['sex'] = $row["sex"];
+                              $values['number_of_limbs'] = $row["number_of_limbs"];
+                              $values['superpowers'] = $row["superpowers"];
+                              $values['biography'] = $row["biography"];
+                              $values['checkbox'] = $row["checkbox"];
                               $values['login'] = $row["login"];
                               $values['pass'] = $row["passwordmd"];
                                 ?>
