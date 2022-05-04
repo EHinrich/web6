@@ -198,8 +198,9 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
 $user = 'u41181';
 $password = '2342349';
 $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true)); 
+$id = $_POST['id'];
 try {
-    $stmt = $db->prepare("UPDATE form2 SET name=:name, email=:email, year=:year, sex=:sex, number_of_limbs=:number_of_limbs, superpowers=:superpowers, biography=:biography, checkbox=:checkbox WHERE id = '$_POST['id']'");
+    $stmt = $db->prepare("UPDATE form2 SET name=:name, email=:email, year=:year, sex=:sex, number_of_limbs=:number_of_limbs, superpowers=:superpowers, biography=:biography, checkbox=:checkbox WHERE id = '$id'");
 
     $stmt -> bindParam(':name', $name);
     $stmt -> bindParam(':email', $email);
