@@ -223,10 +223,10 @@ try {
       $checkbox = $_POST['checkbox'];
 
     $stmt->execute();
-    header('Location: admin.php');
   }
     catch(PDOException $e){
       print('Error : ' . $e->getMessage());
       exit();
   }
+header('Location: admin.php');
 ?>
