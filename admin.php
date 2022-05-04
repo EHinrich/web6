@@ -25,7 +25,7 @@ print('Вы успешно авторизовались и видите защи
 // Реализовать просмотр и удаление всех данных.
 // ********* ?>
 
-<div class="col-md-6 order-3 my-sm-3" id="content2">
+<div id="content">
                 <section id="table">
                     <h2 class="font-weight-bold">Таблица с данными пользователей</h2>
                     <table border="1px">
