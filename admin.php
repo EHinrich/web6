@@ -242,9 +242,8 @@ if (!empty($_POST['id'])){
           print('Error : ' . $e->getMessage());
           exit();
       }
-    }
   }
-    else {
+  else {
         $id = $_POST['id2'];
         $stmt = $db->prepare("DELETE FROM form2 WHERE id = '$id'");
         $stmt->execute();
