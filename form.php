@@ -1,7 +1,6 @@
 <?php
 $id = $_POST['id1'];
 if (!empty($_POST['id1'])) {
-  if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 $values = array();
 $user = 'u41181';
 $password = '2342349';
@@ -29,7 +28,7 @@ catch(PDOException $e){
 }
 
 ?>
-<form action=""  method="POST">
+<form action="admin.php"  method="POST">
                     
               <label>
                   Имя:<br />
@@ -124,45 +123,9 @@ catch(PDOException $e){
               </label><br />
       
               Отправить данные:
-              <input type="submit" value="Изменить" />
+              <input name='form' type="submit" value="Изменить" />
           </form>                   
 <?php
-}
-  else{
-  $user = 'u41181';
-    $password = '2342349';
-    $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
-
-  try {
-    $stmt = $db->prepare("UPDATE form2 SET name=:name, email=:email, year=:year, sex=:sex, number_of_limbs=:number_of_limbs, superpowers=:superpowers, biography=:biography, checkbox=:checkbox WHERE id = '$id1'");
-
-    $stmt -> bindParam(':name', $name);
-    $stmt -> bindParam(':email', $email);
-    $stmt -> bindParam(':year', $year);
-    $stmt -> bindParam(':sex', $sex);
-    $stmt -> bindParam(':number_of_limbs', $number_of_limbs);
-    $stmt -> bindParam(':superpowers', $superpowers);
-    $stmt -> bindParam(':biography', $biography);
-    $stmt -> bindParam(':checkbox', $checkbox);
-    
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $year = $_POST['year'];
-    $sex = $_POST['sex'];
-    $number_of_limbs = $_POST['number_of_limbs'];
-    $superpowers = $_POST['superpowers'];
-    $biography = $_POST['biography'];
-    if (empty($_POST['checkbox']))
-      $checkbox = "No";
-    else
-      $checkbox = $_POST['check'];
-
-    $stmt->execute();
-  }
-    catch(PDOException $e){
-      print('Error : ' . $e->getMessage());
-      exit();
-  }
   }
 }
   else{
@@ -177,7 +140,6 @@ $id = $_POST['id2'];
         catch(PDOException $e){
           print('Error : ' . $e->getMessage());
           exit();
-      }
   } 
 header('Location: admin.php');
 ?>
