@@ -1,9 +1,6 @@
 <?php
 $values = array();
-session_start();
-if (!empty($_SESSION['id']))
-{
-    $user = 'u41181';
+$user = 'u41181';
 $password = '2342349';
 $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
 
@@ -26,7 +23,6 @@ foreach ($stmt as $row) {
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
   exit();
-}
 }
 
 ?>
