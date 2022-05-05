@@ -104,6 +104,38 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                 </section>
             </div>
 <?php
+  $user = 'u41181';
+  $password = '2342349';
+  $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
+  
+  $login = $_POST['login'];
+  $pass = md5($_POST['pass']);
+  $stmt = $db->prepare("SELECT * FROM form2 WHERE login = '$login' && passwordmd = '$pass'");
+  $stmt->execute();
+  $count1 = 0;
+  $count2 = 0;
+  $count3 = 0;
+  foreach ($stmt as $row) {
+    if ($row["superpowers"]='Immortality') $count1++;
+    if ($row["superpowers"]='Passing through walls') $count1++;
+    if ($row["superpowers"]='Levitation') $count1++;
+  }
+?>
+<h3 class="font-weight-bold">Статистика по </h3>
+<table>
+    <tr>
+        <th> Бессмертие </th>
+        <th> Прохождение сквозь стены </th>
+        <th> Левитация </th>
+    </tr>
+    <tr>
+        <td> <?php print $count1 ?> </td>
+        <td> <?php print $count2 ?> </td>
+        <td> <?php print $count3 ?> </td>
+    </tr>
+    
+</table>
+<?php
 }
 else{
     $user = 'u41181';
