@@ -1,4 +1,5 @@
 <?php
+if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 $values = array();
 $user = 'u41181';
 $password = '2342349';
@@ -31,13 +32,13 @@ catch(PDOException $e){
               <label>
                   Имя:<br />
                   <input name="name"
-                         value="" />
+                         value="<?php print $values['name']; ?>" />
               </label><br />
       
                <label>
                   email:<br />
                   <input name="email"
-                         value=""
+                         value="<?php print $values['email']; ?>"
                          type="email" />
               </label><br />
       
@@ -125,6 +126,8 @@ catch(PDOException $e){
           </form>
                     
 <?php
+}
+else{
 $user = 'u41181';
 $password = '2342349';
 $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true)); 
@@ -161,6 +164,6 @@ $id = $_POST['id'];
       }
 
 header('Location: admin.php');
-
+}
         
 ?>
