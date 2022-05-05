@@ -100,8 +100,7 @@
 $user = 'u41181';
 $password = '2342349';
 $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true)); 
-if (!empty($_POST['id'])){
-    $id = $_POST['id'];
+$id = $_POST['id'];
     try {
         $stmt = $db->prepare("UPDATE form2 SET name=:name, email=:email, year=:year, sex=:sex, number_of_limbs=:number_of_limbs, superpowers=:superpowers, biography=:biography, checkbox=:checkbox WHERE id = '$id'");
 
@@ -132,13 +131,8 @@ if (!empty($_POST['id'])){
           print('Error : ' . $e->getMessage());
           exit();
       }
-  }
-  else {
-        $id = $_POST['id2'];
-        $stmt = $db->prepare("DELETE FROM form2 WHERE id = '$id'");
-        $stmt->execute();
-        }
+
 header('Location: admin.php');
-}
+
         
 ?>
