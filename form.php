@@ -6,6 +6,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
 
 try {
 $id = $_POST['id'];
+  print $id;
 $stmt = $db->prepare("SELECT * FROM form2 WHERE id = $id");
 $stmt->execute();
 foreach ($stmt as $row) {
