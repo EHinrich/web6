@@ -80,9 +80,9 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                                     <td><?php print $values['checkbox'] ?></td>
                                     <td><?php print $values['login'] ?></td>
                                     <td><?php print $values['pass'] ?></td>
-                                    <td><form action="form.php"  method="POST" name="form">
-                                        <input type="hidden" name="id" value = $values['id']>
-                                        <a href="form.php" onclick="document.form.submit(); return false;">Изменить</a>
+                                    <td><form method='POST' action='form.php'>
+                                        <input type ='hidden' name='id' value='$values['id']'>
+                                        <input name='form' type='submit' value='Удалить'/>
                                         </form></td>
                                     <td><?php print '<a href="form.php">Удалить</a>' ?></td>
                                 </tr>
