@@ -133,7 +133,7 @@ else{
     if (empty($_POST['checkbox']))
       $checkbox = "No";
     else
-      $checkbox = $_POST['check'];
+      $checkbox = $_POST['checkbox'];
 
     $stmt->execute();
   }
