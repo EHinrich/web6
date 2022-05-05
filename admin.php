@@ -17,6 +17,26 @@ if (empty($_SERVER['PHP_AUTH_USER']) ||
   print('<h1>401 Требуется авторизация</h1>');
   exit();
 }
+$user = 'u41181';
+    $password = '2342349';
+    $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
+
+  try {
+    $stmt = $db->prepare("INSERT INTO admin (login, pass) VALUES (:login, :pass");
+
+    $stmt -> bindParam(':login', $name);
+    $stmt -> bindParam(':pass', $pass);
+
+    $name = 'admin';
+    $email = 123;
+
+    $stmt->execute();
+  }
+    catch(PDOException $e){
+      print('Error : ' . $e->getMessage());
+      exit();
+  }
+  }
 
 print('Вы успешно авторизовались и видите защищенные паролем данные.'); 
 
