@@ -26,7 +26,7 @@ catch(PDOException $e){
   print('Error : ' . $e->getMessage());
   exit();
 }
-
+}
 ?>
 <form action=""  method="POST">
                     
@@ -124,8 +124,7 @@ catch(PDOException $e){
       
               Отправить данные:
               <input type="submit" value="Изменить" />
-          </form>
-}                    
+          </form>                   
 <?php
   else{
 $user = 'u41181';
