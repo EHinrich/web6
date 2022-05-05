@@ -118,7 +118,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
     if ($row["superpowers"]=='Levitation') $count3++;
   }
 ?>
-<h3 class="font-weight-bold">Статистика по </h3>
+<h3 class="font-weight-bold">Статистика по сверхспособностям</h3>
 <table border="1px">
     <tr>
         <th> Бессмертие </th>
