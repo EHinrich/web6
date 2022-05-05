@@ -141,4 +141,5 @@ else{
       print('Error : ' . $e->getMessage());
       exit();
   }
+    header('Location: admin.php');
 } ?>
