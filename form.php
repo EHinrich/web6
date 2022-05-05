@@ -1,5 +1,5 @@
 <?php
-if (!empty($_POST['id1']) {
+if (!empty($_POST['id1'])) {
 $values = array();
 $user = 'u41181';
 $password = '2342349';
