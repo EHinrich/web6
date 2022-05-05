@@ -20,7 +20,14 @@ if (empty($_SERVER['PHP_AUTH_USER']) ||
 $user = 'u41181';
     $password = '2342349';
     $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
+    $stmt = $db->prepare("SELECT * FROM admin");
+  $stmt->execute();
+  $count = 0;
+  foreach ($stmt as $row) {
+    $count = 1;
+  }
 
+    if ($count == 0){
   try {
     $stmt = $db->prepare("INSERT INTO admin (login, pass) VALUES (:login, :pass)");
 
@@ -36,6 +43,7 @@ $user = 'u41181';
       print('Error : ' . $e->getMessage());
       exit();
   }
+    }
 
 print('Вы успешно авторизовались и видите защищенные паролем данные.'); 
 
