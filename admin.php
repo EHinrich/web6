@@ -22,7 +22,7 @@ $user = 'u41181';
     $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
 
   try {
-    $stmt = $db->prepare("INSERT INTO admin (login, pass) VALUES (:login, :pass");
+    $stmt = $db->prepare("INSERT INTO admin (login, pass) VALUES (:login, :pass)");
 
     $stmt -> bindParam(':login', $login);
     $stmt -> bindParam(':pass', $pass);
