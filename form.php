@@ -121,6 +121,7 @@ catch(PDOException $e){
                          <?php if($values['checkbox']==TRUE){print 'checked';} ?> />
                   С контрактом ознакомлен
               </label><br />
+            <input type ='hidden' name='id' value='<?php print $id ?>' >
       
               Отправить данные:
               <input name='form' type="submit" value="Изменить" />
