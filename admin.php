@@ -82,7 +82,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                                     <td><?php print $values['pass'] ?></td>
                                     <td><form action=""  method="POST">
                                         <input type="hidden" name="id" value=$values['id']>
-                                        <a href="form.php" onclick="document.form.submit(); return false;">click here</a>
+                                        <a href="form.php" onclick="document.form.submit(); return false;">Изменить</a>
                                         </form></td>
                                     <td><?php print '<a href="form.php">Удалить</a>' ?></td>
                                 </tr>
