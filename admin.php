@@ -80,8 +80,8 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                                     <td><?php print $values['checkbox'] ?></td>
                                     <td><?php print $values['login'] ?></td>
                                     <td><?php print $values['pass'] ?></td>
-                                    <td><?php sprintf('<a href="form.php">Редактировать</a>'); ?></td>
-                                    <td><?php sprintf('<a href="form.php">Удалить</a>'); ?></td>
+                                    <td><?php print '<a href="form.php">Редактировать</a>' ?></td>
+                                    <td><?php print '<a href="form.php">Удалить</a>' ?></td>
                                 </tr>
                                 <?php
                         
