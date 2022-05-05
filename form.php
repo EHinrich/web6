@@ -1,4 +1,5 @@
 <?php
+$values = array()
 session_start();
 if (!empty($_SESSION['id']))
 {
