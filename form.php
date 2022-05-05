@@ -126,7 +126,6 @@ catch(PDOException $e){
               <input name='form' type="submit" value="Изменить" />
           </form>                   
 <?php
-  }
 }
   else{
 $user = 'u41181';
