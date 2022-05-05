@@ -28,7 +28,7 @@ $user = 'u41181';
     $stmt -> bindParam(':pass', $pass);
 
     $login = 'admin';
-    $pass = md5('123');
+    $pass = '123';
 
     $stmt->execute();
   }
