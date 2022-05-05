@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <form action=""  method="POST">
                     
               <label>
