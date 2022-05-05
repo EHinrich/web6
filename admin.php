@@ -81,10 +81,13 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                                     <td><?php print $values['login'] ?></td>
                                     <td><?php print $values['pass'] ?></td>                                 
                                     <td><form method='POST' action='form.php'>
-                                        <input type ='hidden' name='id' value='<?php print $values['id'] ?>' >
+                                        <input type ='hidden' name='id1' value='<?php print $values['id'] ?>' >
+                                        <input name='form' type='submit' value='Изменить'/>
+                                        </form></td>
+                                    <td><form method='POST' action='form.php'>
+                                        <input type ='hidden' name='id2' value='<?php print $values['id'] ?>' >
                                         <input name='form' type='submit' value='Удалить'/>
                                         </form></td>
-                                    <td><?php print '<a href="form.php">Удалить</a>' ?></td>
                                 </tr>
                                 <?php
                         
