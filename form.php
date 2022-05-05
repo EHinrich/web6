@@ -1,4 +1,5 @@
 <?php
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 $values = array();
 $user = 'u41181';
 $password = '2342349';
@@ -124,13 +125,13 @@ catch(PDOException $e){
               Отправить данные:
               <input type="submit" value="Изменить" />
           </form>
-                    
+}                    
 <?php
-/*else{
+  else{
 $user = 'u41181';
 $password = '2342349';
 $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true)); 
-$id = $_POST['id'];
+$id = $_POST['id2'];
     try {
         $stmt = $db->prepare("UPDATE form2 SET name=:name, email=:email, year=:year, sex=:sex, number_of_limbs=:number_of_limbs, superpowers=:superpowers, biography=:biography, checkbox=:checkbox WHERE id = '$id'");
 
@@ -163,6 +164,5 @@ $id = $_POST['id'];
       }
 
 header('Location: admin.php');
-}*/
-        
+  }       
 ?>
