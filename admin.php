@@ -87,7 +87,6 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                                 <?php
                         
                               }
-                            }
                               catch(PDOException $e){
                                 print('Error : ' . $e->getMessage());
                                 exit();
