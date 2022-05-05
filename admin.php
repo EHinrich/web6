@@ -107,10 +107,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
   $user = 'u41181';
   $password = '2342349';
   $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
-  
-  $login = $_POST['login'];
-  $pass = md5($_POST['pass']);
-  $stmt = $db->prepare("SELECT * FROM form2 WHERE login = '$login' && passwordmd = '$pass'");
+  $stmt = $db->prepare("SELECT * FROM form2");
   $stmt->execute();
   $count1 = 0;
   $count2 = 0;
@@ -122,7 +119,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
   }
 ?>
 <h3 class="font-weight-bold">Статистика по </h3>
-<table>
+<table border="1px">
     <tr>
         <th> Бессмертие </th>
         <th> Прохождение сквозь стены </th>
