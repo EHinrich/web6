@@ -97,8 +97,6 @@
           </form>
                     
 <?php
-}
-else{
 $user = 'u41181';
 $password = '2342349';
 $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true)); 
