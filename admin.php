@@ -26,6 +26,7 @@ print('Вы успешно авторизовались и видите защи
 // *********
 
 $values = array();
+$masseges = array();
 
 $user = 'u41181';
 $password = '2342349';
@@ -80,6 +81,8 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                                     <td><?php print $values['checkbox'] ?></td>
                                     <td><?php print $values['login'] ?></td>
                                     <td><?php print $values['pass'] ?></td>
+                                    <td><?php $messages[] = sprintf('<a href="form.php">Редактировать</a>'); ?></td>
+                                    <td><?php $messages[] = sprintf('<a href="form.php">Удалить</a>'); ?></td>
                                 </tr>
                                 <?php
                         
