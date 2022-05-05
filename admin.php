@@ -83,6 +83,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                                     <td><?php print '<a href="form.php">Редактировать</a>' ?></td>
                                     <td><?php print '<a href="form.php">Удалить</a>' ?></td>
                                     <?php 
+                                    if (session_start()){
                                     $user = 'u41181';
                                     $password = '2342349';
                                     $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
@@ -107,7 +108,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                                             print('Error : ' . $e->getMessage());
                                             exit();
                                        }
-                                include('form.php');
+                                    }
                                       ?>
                                 </tr>
                                 <?php
