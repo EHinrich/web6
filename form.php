@@ -133,29 +133,7 @@ $password = '2342349';
 $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true)); 
 $id = $_POST['id2'];
     try {
-        $stmt = $db->prepare("UPDATE form2 SET name=:name, email=:email, year=:year, sex=:sex, number_of_limbs=:number_of_limbs, superpowers=:superpowers, biography=:biography, checkbox=:checkbox WHERE id = '$id'");
-
-        $stmt -> bindParam(':name', $name);
-        $stmt -> bindParam(':email', $email);
-        $stmt -> bindParam(':year', $year);
-        $stmt -> bindParam(':sex', $sex);
-        $stmt -> bindParam(':number_of_limbs', $number_of_limbs);
-        $stmt -> bindParam(':superpowers', $superpowers);
-        $stmt -> bindParam(':biography', $biography);
-        $stmt -> bindParam(':checkbox', $checkbox);
-
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $year = $_POST['year'];
-        $sex = $_POST['sex'];
-        $number_of_limbs = $_POST['number_of_limbs'];
-        $superpowers = $_POST['superpowers'];
-        $biography = $_POST['biography'];
-        if (empty($_POST['checkbox']))
-          $checkbox = "No";
-        else
-          $checkbox = $_POST['checkbox'];
-
+        $stmt = $db->prepare("DELETE FROM form2 WHERE id = '$id'");
         $stmt->execute();
       }
         catch(PDOException $e){
