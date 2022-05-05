@@ -114,8 +114,8 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
   $count3 = 0;
   foreach ($stmt as $row) {
     if ($row["superpowers"]='Immortality') $count1++;
-    if ($row["superpowers"]='Passing through walls') $count1++;
-    if ($row["superpowers"]='Levitation') $count1++;
+    if ($row["superpowers"]='Passing through walls') $count2++;
+    if ($row["superpowers"]='Levitation') $count3++;
   }
 ?>
 <h3 class="font-weight-bold">Статистика по </h3>
