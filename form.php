@@ -6,7 +6,7 @@ $password = '2342349';
 $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
 
 try {
-$id = $_POST['id'];
+$id = $_POST['id1'];
   print $id;
 $stmt = $db->prepare("SELECT * FROM form2 WHERE id = $id");
 $stmt->execute();
