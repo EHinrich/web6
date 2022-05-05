@@ -80,6 +80,7 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                                     <td><?php print $values['checkbox'] ?></td>
                                     <td><?php print $values['login'] ?></td>
                                     <td><?php print $values['pass'] ?></td>
+                                    $_SESSION['id'] = $values['id'];
                                     <td><?php print '<a href="form.php">Редактировать</a>' ?></td>
                                     <td><?php print '<a href="form.php">Удалить</a>' ?></td>
                                 </tr>
@@ -96,32 +97,3 @@ $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO:
                     </table>
                 </section>
             </div>
-<?php
-include('form.php');
-if (session_start())
-{
-    $user = 'u41181';
-$password = '2342349';
-$db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
-
-try {
-$id =$values['id'];
-$stmt = $db->prepare("SELECT * FROM form2 WHERE id = $id");
-$stmt->execute();
-foreach ($stmt as $row) {
-  $values['name']=$row["name"];
-  $values['email'] = $row["email"];
-  $values['year'] = $row["year"];
-  $values['sex'] = $row["sex"];
-  $values['number_of_limbs'] = $row["number_of_limbs"];
-  $values['superpowers'] = $row["superpowers"];
-  $values['biography'] = $row["biography"];
-  $values['checkbox'] = $row["checkbox"];
- }
-
-}
-catch(PDOException $e){
-  print('Error : ' . $e->getMessage());
-  exit();
-}
-}
