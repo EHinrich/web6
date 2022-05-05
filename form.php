@@ -140,5 +140,6 @@ $id = $_POST['id2'];
           print('Error : ' . $e->getMessage());
           exit();
   } 
+  }
 header('Location: admin.php');
 ?>
