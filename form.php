@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+if (!empty($_POST['id1']) {
 $values = array();
 $user = 'u41181';
 $password = '2342349';
