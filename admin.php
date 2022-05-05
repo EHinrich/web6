@@ -24,11 +24,11 @@ $user = 'u41181';
   try {
     $stmt = $db->prepare("INSERT INTO admin (login, pass) VALUES (:login, :pass");
 
-    $stmt -> bindParam(':login', $name);
+    $stmt -> bindParam(':login', $login);
     $stmt -> bindParam(':pass', $pass);
 
-    $name = 'admin';
-    $email = md5(123);
+    $login = 'admin';
+    $pass = md5(123);
 
     $stmt->execute();
   }
