@@ -53,14 +53,14 @@ catch(PDOException $e){
               Пол:<br />
               <label>
                   <input type="radio" 
-                         name="radio-group-1"
+                         name="sex"
                          value="male"
                          <?php if($values['sex']=="male") {print 'checked';} ?> />
                   Муж
               </label>
               <label>
                   <input type="radio" 
-                         name="radio-group-1" 
+                         name="sex" 
                          value="female" 
                          <?php if($values['sex']=="female") {print 'checked';} ?>/>
                   Жен
@@ -69,28 +69,28 @@ catch(PDOException $e){
               Количество конечностей:<br />
               <label>
                   <input type="radio" 
-                         name="radio-group-2" 
+                         name="number_of_limbs" 
                          value="1" 
                          <?php if($values['number_of_limbs']=="1") {print 'checked';} ?> />
                   1
               </label>
               <label>
                   <input type="radio"
-                         name="radio-group-2"
+                         name="number_of_limbs"
                          value="2" 
                          <?php if($values['number_of_limbs']=="2") {print 'checked';} ?> />
                   2
               </label>
               <label>
                   <input type="radio"
-                         name="radio-group-2" 
+                         name="number_of_limbs" 
                          value="3"
                          <?php if($values['number_of_limbs']=="3") {print 'checked';} ?>/>
                   3
               </label>
               <label>
                   <input type="radio"
-                         name="radio-group-2"  
+                         name="number_of_limbs"  
                          value="4" 
                          <?php if($values['number_of_limbs']=="4") {print 'checked';} ?> />
                   4
@@ -99,7 +99,7 @@ catch(PDOException $e){
               <label>
                   Сверхспособности:
                   <br />
-                  <select name="super"
+                  <select name="superpowers"
                       multiple="multiple">
                       <option value="Immortality" <?php if($values['superpowers']=="Immortality"){print 'selected';} ?> >Бессмертие</option>
                       <option value="Passing through walls" <?php if($values['superpowers']=="Passing through walls"){print 'selected';} ?> >Прохождение сквозь стены</option>
@@ -109,7 +109,7 @@ catch(PDOException $e){
       
               <label>
                   Биография:<br />
-                  <textarea name="bio">
+                  <textarea name="biography">
                   <?php print $values['biography']; ?></textarea> 
               </label><br />
       
@@ -117,7 +117,7 @@ catch(PDOException $e){
               Чекбокс:<br />
               <label>
                   <input type="checkbox"
-                         name="check" value="Yes"
+                         name="checkbox" value="Yes"
                          <?php if($values['checkbox']==TRUE){print 'checked';} ?> />
                   С контрактом ознакомлен
               </label><br />
