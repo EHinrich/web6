@@ -9,8 +9,8 @@
   $stmt = $db->prepare("SELECT * FROM admin");
   $stmt->execute();
   foreach ($stmt as $row) {
-    $login = $row['login'];
-    $pass = $row['pass'];
+    $login = $row["login"];
+    $pass = $row["pass"];
   }
 
 // Пример HTTP-аутентификации.
