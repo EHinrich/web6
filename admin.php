@@ -24,7 +24,8 @@ if (empty($_SERVER['PHP_AUTH_USER']) ||
     md5($_SERVER['PHP_AUTH_PW']) != md5($aut['pass'])) {
   header('HTTP/1.1 401 Unanthorized');
   header('WWW-Authenticate: Basic realm="My site"');
-  print('<h1>401 Требуется авторизация</h1>');
+  print('<h1>401 Требуется авторизация </h1>');
+  print $login;
   exit();
 }
 
