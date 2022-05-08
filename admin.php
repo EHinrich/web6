@@ -3,6 +3,15 @@
  * Задача 6. Реализовать вход администратора с использованием
  * HTTP-авторизации для просмотра и удаления результатов.
  **/
+  $user = 'u41181';
+  $password = '2342349';
+  $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
+  $stmt = $db->prepare("SELECT * FROM admin");
+  $stmt->execute();
+  foreach ($stmt as $row) {
+    $login = $row['login'];
+    $pass = $row['pass'];
+  }
 
 // Пример HTTP-аутентификации.
 // PHP хранит логин и пароль в суперглобальном массиве $_SERVER.
@@ -10,40 +19,13 @@
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 if (empty($_SERVER['PHP_AUTH_USER']) ||
     empty($_SERVER['PHP_AUTH_PW']) ||
-    $_SERVER['PHP_AUTH_USER'] != 'admin' ||
-    md5($_SERVER['PHP_AUTH_PW']) != md5('123')) {
+    $_SERVER['PHP_AUTH_USER'] != $login ||
+    md5($_SERVER['PHP_AUTH_PW']) != md5($pass)) {
   header('HTTP/1.1 401 Unanthorized');
   header('WWW-Authenticate: Basic realm="My site"');
   print('<h1>401 Требуется авторизация</h1>');
   exit();
 }
-$user = 'u41181';
-    $password = '2342349';
-    $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
-    $stmt = $db->prepare("SELECT * FROM admin");
-  $stmt->execute();
-  $count = 0;
-  foreach ($stmt as $row) {
-    $count = 1;
-  }
-
-    if ($count == 0){
-  try {
-    $stmt = $db->prepare("INSERT INTO admin (login, pass) VALUES (:login, :pass)");
-
-    $stmt -> bindParam(':login', $login);
-    $stmt -> bindParam(':pass', $pass);
-
-    $login = 'admin';
-    $pass = md5('123');
-
-    $stmt->execute();
-  }
-    catch(PDOException $e){
-      print('Error : ' . $e->getMessage());
-      exit();
-  }
-    }
 
 print('Вы успешно авторизовались и видите защищенные паролем данные.'); 
 
