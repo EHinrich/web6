@@ -26,6 +26,7 @@ if (empty($_SERVER['PHP_AUTH_USER']) ||
   header('WWW-Authenticate: Basic realm="My site"');
   print('<h1>401 Требуется авторизация </h1>');
   print $aut['login'];
+  print md5($aut['pass']);
   exit();
 }
 
