@@ -8,9 +8,10 @@
   $db = new PDO('mysql:host=localhost;dbname=u41181', $user, $password, array(PDO::ATTR_PERSISTENT => true));
   $stmt = $db->prepare("SELECT * FROM admin");
   $stmt->execute();
+  $aut = array();
   foreach ($stmt as $row) {
-    $login = $row["login"];
-    $pass = $row["pass"];
+    $aut['login'] = $row["login"];
+    $aut['pass'] = $row["pass"];
   }
 
 // Пример HTTP-аутентификации.
@@ -19,8 +20,8 @@
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 if (empty($_SERVER['PHP_AUTH_USER']) ||
     empty($_SERVER['PHP_AUTH_PW']) ||
-    $_SERVER['PHP_AUTH_USER'] != $login ||
-    md5($_SERVER['PHP_AUTH_PW']) != md5($pass)) {
+    $_SERVER['PHP_AUTH_USER'] != $aut['login'] ||
+    md5($_SERVER['PHP_AUTH_PW']) != md5($aut['pass']) {
   header('HTTP/1.1 401 Unanthorized');
   header('WWW-Authenticate: Basic realm="My site"');
   print('<h1>401 Требуется авторизация</h1>');
