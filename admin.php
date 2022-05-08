@@ -21,12 +21,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 if (empty($_SERVER['PHP_AUTH_USER']) ||
     empty($_SERVER['PHP_AUTH_PW']) ||
     $_SERVER['PHP_AUTH_USER'] != $aut['login'] ||
-    md5($_SERVER['PHP_AUTH_PW']) != md5($aut['pass'])) {
+    md5($_SERVER['PHP_AUTH_PW']) != $aut['pass']) {
   header('HTTP/1.1 401 Unanthorized');
   header('WWW-Authenticate: Basic realm="My site"');
   print('<h1>401 Требуется авторизация </h1>');
-  print $aut['login'];
-  print md5($aut['pass']);
   exit();
 }
 
